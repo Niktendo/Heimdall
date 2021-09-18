@@ -18,6 +18,13 @@ jobs:
         cd build
         cmake -DCMAKE_BUILD_TYPE=Release ..
         make
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: Arti
+        # Directory containing files to upload
+        path: ./build
 
   win-build:
     runs-on: windows-latest
